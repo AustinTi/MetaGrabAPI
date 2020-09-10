@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/AustinTi/SpotGrabAPI/misc"
+	"github.com/AustinTi/MetaGrabAPI/misc"
 )
 
 //GetInfo func

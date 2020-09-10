@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/AustinTi/SpotGrabAPI/misc"
+	"github.com/AustinTi/MetaGrabAPI/misc"
 	"golang.org/x/time/rate"
 )
 

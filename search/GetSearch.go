@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/AustinTi/SpotGrabAPI/misc"
+	"github.com/AustinTi/MetaGrabAPI/misc"
 )
 
 //GetSearch func

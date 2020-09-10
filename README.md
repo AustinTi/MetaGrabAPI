@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://spotgrab.austinti.me">
-    <img src="https://spotgrab.austinti.me/logo.png" width="300" height="300" />
+  <a href="https://metagrab.austinti.me">
+    <img src="https://metagrab.austinti.me/logo.png" width="300" height="300" />
   </a>
 </p>
 
-# <p align="center">SpotGrabAPI</p>
+# <p align="center">MetaGrabAPI</p>
 <p align="center">An API that grabs Spotify's metadata for any track you'd like!</p>
 
 ## Table of Contents
@@ -19,10 +19,10 @@
   - [License Notice](#license-notice)
 
 ## Introduction
-This is the API used by my other project, [SpotGrab](https://github.com/AustinTi/SpotGrab). It's written in Go and grabs Spotify's metadata about any track on its platform. Metadata is data about other data. Track metadata can include artists, what album the track appeared on, and the qualitative feel of the track.
+This is the API used by my other project, [MetaGrab](https://github.com/AustinTi/MetaGrab). It's written in Go and grabs Spotify's metadata about any track on its platform. Metadata is data about other data. Track metadata can include artists, what album the track appeared on, and the qualitative feel of the track.
 
 ## Configuration
-[config.example.json](https://github.com/AustinTi/SpotGrabAPI/blob/master/config.example.json) is an example for the config that then becomes `config.json`. The config becomes a struct as such:
+[config.example.json](https://github.com/AustinTi/MetaGrabAPI/blob/master/config.example.json) is an example for the config that then becomes `config.json`. The config becomes a struct as such:
 ```go
 type Configuration struct {
 	//ID and Secret are strings obtained at https://developer.spotify.com/dashboard/
@@ -73,6 +73,9 @@ type Info struct {
 		URI string `json:"uri"`
 	} `json:"artists"`
 
+	//A list of the countries in which the track can be played, identified by their ISO 3166-1 alpha-2 code.
+	AvailableMarkets []string `json:"available_markets"`
+
 	//Whether or not the track has explicit lyrics (true = yes it does; false = no it does not OR unknown)
 	Explicit bool `json:"explicit"`
 
@@ -96,6 +99,9 @@ type Info struct {
 
 //Album is catalog information for a single album
 type Album struct {
+	//The type of the album: one of "Album", "Single", or "Compilation".
+	Type string `json:"album_type"`
+
 	//The Spotify ID for the album
 	ID string `json:"id"`
 
@@ -593,8 +599,7 @@ There are a number of things shipped by the Spotify API that is not covered with
   * Artists -
     * `external_urls`
     * `href`
-    * `type`
-  * `available_markets`
+    * `type` - Literally just the string "artist"
   * `disc_number`
   * `external_ids`
   * `external_urls`
@@ -603,7 +608,7 @@ There are a number of things shipped by the Spotify API that is not covered with
   * `preview_url` - Can be derived easily
 * Album -
   * `album_type`
-  * `available_markets`
+  * `available_markets` - Included in the Info struct
   * `copyrights`
   * `external_ids`
   * `external_urls`
@@ -620,4 +625,4 @@ There are a number of things shipped by the Spotify API that is not covered with
   * `tatums`
 
 ## License Notice
-Make sure any and all use of this software complies with the [license](https://github.com/AustinTi/SpotGrabAPI/blob/master/LICENSE), the GNU Affero General Public License v3.0
+Make sure any and all use of this software complies with the [license](https://github.com/AustinTi/MetaGrabAPI/blob/master/LICENSE), the GNU Affero General Public License v3.0

@@ -1,5 +1,8 @@
-module github.com/AustinTi/SpotGrabAPI
+module github.com/AustinTi/MetaGrabAPI
 
 go 1.14
 
-require golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
+require (
+	github.com/AustinTi/SpotGrabAPI v0.0.0-20200815090309-b5a523ba4719
+	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e
+)

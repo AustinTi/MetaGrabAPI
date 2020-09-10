@@ -4,9 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/AustinTi/SpotGrabAPI/misc"
-	"github.com/AustinTi/SpotGrabAPI/search"
-	"github.com/AustinTi/SpotGrabAPI/track"
+	"github.com/AustinTi/MetaGrabAPI/misc"
+	"github.com/AustinTi/MetaGrabAPI/search"
+	"github.com/AustinTi/MetaGrabAPI/track"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/AustinTi/SpotGrabAPI/misc"
+	"github.com/AustinTi/MetaGrabAPI/misc"
 )
 
 //Handler func
